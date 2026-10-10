@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TCP Zalo Chat</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section id="authPage" class="auth-page"><div class="auth-card">
+<div class="logo">Z</div><h1>TCP Zalo Chat</h1><p>HTTP Request/Response chạy trên TCP</p>
+<input id="username" placeholder="Username"><input id="password" type="password" placeholder="Password">
+<button onclick="login()">Đăng nhập</button><button class="secondary" onclick="register()">Đăng ký tài khoản</button><div id="authMsg"></div>
+</div></section>
+<section id="chatPage" class="chat-page hidden">
+<aside class="sidebar"><div class="profile"><div id="avatar" class="avatar">U</div><div><b id="myName"></b><small>🟢 Online</small></div><button class="logout" onclick="logout()">↪</button></div>
+<div class="search"><input id="search" placeholder="🔎 Tìm người dùng" oninput="renderUsers()"></div>
+<div class="section-title">NGƯỜI DÙNG</div><div id="userList"></div>
+<div class="section-title group-title">NHÓM CHAT <button onclick="createGroup()">＋</button></div><div id="groupList"></div></aside>
+<main class="conversation"><header class="chat-header"><div><b id="chatTitle">Chọn người để chat</b><small id="chatSub">HTTP Request/Response trên TCP</small></div><button id="addMemberBtn" class="hidden" onclick="addMember()">＋ Thành viên</button></header>
+<div id="messages" class="messages"><div class="empty"><div>💬</div><h2>TCP Zalo Chat</h2><p>Chọn người dùng hoặc nhóm.</p></div></div>
+<div class="composer"><input id="messageInput" disabled placeholder="Nhập tin nhắn..." onkeydown="if(event.key==='Enter')sendMessage()"><button id="sendBtn" disabled onclick="sendMessage()">Gửi</button></div></main></section>
+<script src="/app.js"></script></body></html>
